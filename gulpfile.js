@@ -12,7 +12,6 @@ const browserSync = require('browser-sync').create();
 const ghPages = require('gulp-gh-pages');
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
-const cleanCSS = require('gulp-cleancss');
 const wait = require('gulp-wait');
 
 let postCssPlugins = [
@@ -43,10 +42,7 @@ gulp.task('style', function () {
     .pipe(postcss(postCssPlugins))
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest('./css/'))
-    .pipe(browserSync.stream({match: '**/*.css'}))
-    .pipe(rename('style.min.css'))
-    .pipe(cleanCSS())
-    .pipe(gulp.dest('./css/'));
+    .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 gulp.task('default', ['serve']);
