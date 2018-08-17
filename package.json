@@ -25,9 +25,6 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-wait": "0.0.2",
-    "postcss-object-fit-images": "^1.1.2"
   },
-  "dependencies": {
-    "object-fit-images": "^3.2.3"
-  }
+  "dependencies": {}
 }

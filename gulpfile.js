@@ -7,23 +7,13 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const mqpacker = require('css-mqpacker');
-const objectFitImages = require('postcss-object-fit-images');
 const browserSync = require('browser-sync').create();
 const ghPages = require('gulp-gh-pages');
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const wait = require('gulp-wait');
 
-let postCssPlugins = [
-  autoprefixer({
-    browsers: ['last 2 version'],
-    grid: true,
-  }),
-  mqpacker({
-    sort: true
-  }),
-  objectFitImages(),
-];
+let postCssPlugins = ;
 
 gulp.task('style', function () {
   return gulp.src('./scss/style.scss')
@@ -39,7 +29,15 @@ gulp.task('style', function () {
     .pipe(wait(100))
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(postcss(postCssPlugins))
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['last 2 version'],
+        grid: true,
+      }),
+      mqpacker({
+        sort: true
+      }),
+    ]))
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest('./css/'))
     .pipe(browserSync.stream({match: '**/*.css'}));
