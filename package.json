@@ -12,18 +12,18 @@
     "deploy": "cross-env NODE_ENV=production ./node_modules/.bin/gulp style && cross-env ./node_modules/.bin/gulp deploy"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
+    "autoprefixer": "^9.1.1",
     "browser-sync": "^2.18.8",
-    "cross-env": "^3.2.4",
-    "css-mqpacker": "^5.0.1",
+    "cross-env": "^5.2.0",
+    "css-mqpacker": "^7.0.0",
     "gulp": "^3.9.1",
     "gulp-cleancss": "^0.2.2",
     "gulp-gh-pages": "^0.5.4",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.3.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-wait": "0.0.2",
     "postcss-object-fit-images": "^1.1.2"
