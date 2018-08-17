@@ -73,7 +73,13 @@ gulp.task('watch:html', [], reload);
 
 gulp.task('deploy', function() {
   return gulp.src([
-      './**/*',
+      '**/*',
+      '!node_modules/**',
+      '!scss/**',
+      '!gulpfile.js',
+      '!package-lock.json',
+      '!package.json',
+      '!readme.md',
     ])
     .pipe(ghPages());
 });
