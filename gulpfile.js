@@ -13,8 +13,6 @@ const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const wait = require('gulp-wait');
 
-let postCssPlugins = ;
-
 gulp.task('style', function () {
   return gulp.src('./scss/style.scss')
     .pipe(plumber({
@@ -59,11 +57,14 @@ gulp.task('serve', ['style'], function() {
 
   gulp.watch([
     './*.html',
-  ], ['watch:html']);
+    './js/*.js',
+    './fonts/*.{woff,woff2,ttf,eot,svg}',
+    './img/*.{jpg,jpeg,png,gif,svg}',
+  ], ['watch:static']);
 
 });
 
-gulp.task('watch:html', [], reload);
+gulp.task('watch:static', [], reload);
 
 gulp.task('deploy', function() {
   return gulp.src([

@@ -24,7 +24,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.4.1",
-    "gulp-wait": "0.0.2",
+    "gulp-wait": "0.0.2"
   },
   "dependencies": {}
 }
